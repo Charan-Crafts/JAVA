@@ -23,7 +23,7 @@ public class SetMismatch {
         while(i<arr.length){
 
             int correctIndex = arr[i]-1;
-
+            
             if(arr[i]!=arr[correctIndex]){
                 int temp = arr[i];
                 arr[i]=arr[correctIndex];
