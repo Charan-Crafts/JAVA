@@ -142,7 +142,40 @@ public class Main {
 
     }
 
+    public static void pattern7(int size){
+
+        for(int row = 1;row<=size;row++){
+            int leftSpace = size-row;
+            int numbers = ((2*size)-1)-(size-row)*2;
+            int rightSpace = size-row;
+            for(int ls = 0;ls<leftSpace;ls++){
+                System.out.print(" ");
+            }
+            for(int num = 1;num<=numbers;num++){
+                System.out.print(num);
+            }
+            for(int rs = 0;rs<rightSpace;rs++){
+                System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+    
+    public static void pattern8(int size){
+
+        for(int row = 1;row<=2*size-1;row++){
+
+            for(int col = 1;col<=2*size-1;col++){
+                int number = size-Math.min(
+                 Math.min(row-1, col-1),
+                 Math.min((2*size-1)-row, (2*size-1)-col)
+             );
+                System.out.print(number +" ");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
-        pattern6(5);
+        pattern8(4);
     }
 }
