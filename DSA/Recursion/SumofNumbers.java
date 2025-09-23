@@ -19,7 +19,17 @@ public class SumofNumbers {
         }
         return remainder + sum(quotient);
     }
+    
+    public static int productOfDigits(int number){
+        int remainder = number % 10;
+        int quotient = number /10;
+
+        if(quotient==0){
+            return remainder;
+        }
+        return remainder*productOfDigits(quotient);
+    }
     public static void main(String[] args) {
-        System.out.println(sum(412323123));
+        System.out.println(productOfDigits(1203));
     }
 }
