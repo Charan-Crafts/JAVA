@@ -20,7 +20,7 @@ public class Account {
         this.accountNumber+=counter;
         this.balance=0;
         this.contactNumber=contactNumber;     
-        this.password=(int)(Math.random()*10000);
+        this.password=123;
     }
 
     public String getAccountNumber(){
@@ -31,12 +31,28 @@ public class Account {
         return this.accountHolderName;
     }
 
+    public String setAccountHolderName(String newName){
+        return this.accountHolderName=newName;
+    }
+
     public double getBalance(){
         return this.balance;
     }
 
+    public double deposite(double amount){
+        return this.balance = this.balance-amount;
+    }
+
+    public double credit(double amount){
+        return this.balance = this.balance+amount;
+    }
+
     public int getPassword(){
         return this.password;
+    }
+
+    public int setPassword(int newPassword){
+        return this.password = newPassword;
     }
 
     public String getIFSCCODE(){
@@ -53,6 +69,8 @@ public class Account {
         System.out.println("Account Holder name : "+getAccountHolderName());
         System.out.println("IFSC CODE : "+getIFSCCODE());
         System.out.println("Balance : "+getBalance());
+        System.out.println("Contact Number : "+getContactNumber());
+       
         System.out.println(" ---------------------             ---------------------");
     }
 
