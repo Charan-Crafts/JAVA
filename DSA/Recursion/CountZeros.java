@@ -15,6 +15,6 @@ public class CountZeros {
         return countNumberOfZeros(quotient,remainder==0?++count:count);
     }
     public static void main(String[] args) {
-        System.out.println(countNumberOfZeros(102020202,0));
+        System.out.println(countNumberOfZeros(0434300,0));
     }
 }
