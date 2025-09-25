@@ -43,5 +43,7 @@ public class AsciiValue {
 
         String g = "abc";
         System.out.println(asciiString(g, ""));
+
+        System.out.println(g.substring(1,2));
     }
 }
