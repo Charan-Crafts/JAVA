@@ -17,6 +17,6 @@ public class RemoveString {
     public static void main(String[] args) {
         
         String given = "adfaafdappleadfadfa";
-        skipApple(given, "");
+        skipApple(given);
     }
 }
