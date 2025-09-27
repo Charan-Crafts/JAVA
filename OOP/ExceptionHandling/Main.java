@@ -1,15 +1,35 @@
 import java.util.Scanner;
 
-public class Main {
-    
-    public static void main(String[] args) {
+
+class AgeException extends Exception{
+
+    public AgeException(int age){
         
+        super("Your age is "+age+" which is insufficent for this.");
+    }
+}
+public class Main {
+
+    public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the Number");
+        System.out.print("Enter your age ");
 
-        int userInput = scanner.nextInt();
+        int age = scanner.nextInt();
 
-        System.out.println(userInput);
+       try {
+
+        if(age<18){
+            throw new AgeException(18);
+        }
+        else{
+            System.out.println("Your eligable ..");
+        }
+        
+       } catch (AgeException e) {
+        System.out.println(e.getMessage());
+       }
+        
     }
 }
