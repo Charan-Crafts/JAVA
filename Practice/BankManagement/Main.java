@@ -23,7 +23,11 @@ public class Main {
 
         manager.getAccountDetails("CHARAN1001", 12);
 
-        manager.getAllTranscations();
+        // manager.getAllTranscations();
+
+        // manager.getTransaction("CHARAN1001");
+
+        manager.getCreditTranscation();
         
     }
 }

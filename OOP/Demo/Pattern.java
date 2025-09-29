@@ -1,4 +1,4 @@
-public class Main {
+public class Pattern {
 
     public static void pattern1(int n){
 

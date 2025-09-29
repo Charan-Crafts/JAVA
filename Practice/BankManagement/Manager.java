@@ -75,9 +75,9 @@ public class Manager extends Bank {
                 } else {
                     details.deposite(amount);
                     System.out.println("Amount deposited .Thank You ...");
-                    TransactionDetails newTransaction = new TransactionDetails(accountNumber,amount);
+                    TransactionDetails newTransaction = new TransactionDetails(accountNumber, amount);
                     newTransaction.typeOfTransaction = newTransaction.setDebitTransaction();
-                    
+
                     transactionDetails.add(newTransaction);
                     return;
                 }
@@ -100,7 +100,7 @@ public class Manager extends Bank {
 
                     System.out.println("Amount successfully Credited into your bank Account Thank You");
 
-                    TransactionDetails newTransaction = new TransactionDetails(accountNumber,amount);
+                    TransactionDetails newTransaction = new TransactionDetails(accountNumber, amount);
 
                     newTransaction.typeOfTransaction = newTransaction.setCreditTransaction();
 
@@ -199,9 +199,46 @@ public class Manager extends Bank {
 
             System.err.println("Account Number : " + details.getAccountNumber());
             System.out.println("Action :    " + details.getTransaction());
-            System.out.println("Amount   : "+details.getAmount());
+            System.out.println("Amount   : " + details.getAmount());
             System.out.println(" ---------------------------------------------------");
         }
     }
 
+    public void getTransaction(String accountNumber) {
+
+        System.out.println("Account Details of  " + accountNumber);
+        for (TransactionDetails details : transactionDetails) {
+
+            if (details.getAccountNumber().equals(accountNumber)) {
+
+                System.out.println(details.getTransaction());
+                System.out.println(details.getAmount());
+
+                System.out.println(" ------------------------------- ");
+            }
+        }
+        System.out.println("Invalid Account Number .. ");
+    }
+
+    public void getDebitTransaction() {
+
+        for (TransactionDetails details : transactionDetails) {
+
+            if (details.getTransaction().equals("Debit")) {
+                System.out.println("Account number : " + details.getAccountNumber());
+                System.out.println("Amount :    " + details.getAmount());
+            }
+        }
+    }
+
+    public void getCreditTranscation() {
+
+        for (TransactionDetails details : transactionDetails) {
+
+            if (details.getTransaction().equals("Credit")) {
+                System.out.println("Account Number :    " + details.getAccountNumber());
+                System.out.println("Amount :    " + details.getAmount());
+            }
+        }
+    }
 }
