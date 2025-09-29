@@ -14,7 +14,23 @@ public class Main {
 
         linkedList.insertAtEnd(120);
 
+        linkedList.insertByIndex(50,2);
+
+        linkedList.insertByIndex(70,3);
+
+        linkedList.insertByIndex(0,0);
+
+        linkedList.deleteFirst();
+
+        linkedList.deleteLast();
+
+        linkedList.deleteByIndex(1);
+
         linkedList.display();
+
+
+
+        linkedList.size();
 
     }
 }

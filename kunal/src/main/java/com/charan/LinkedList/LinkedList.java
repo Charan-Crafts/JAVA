@@ -2,6 +2,18 @@ package com.charan.LinkedList;
 
 public class LinkedList {
 
+    class Node {
+
+        private int data;
+
+        private Node next;
+
+        public Node(int data) {
+
+            this.data = data;
+        }
+    }
+
     private int size;
 
     private Node head;
@@ -76,16 +88,83 @@ public class LinkedList {
         System.out.println(size);
     }
 
-    public void insertAt
-    class Node {
+    public void insertByIndex(int data,int indexValue){
 
-        private int data;
+        int currentIndex = 0;
 
-        private Node next;
-
-        public Node(int data) {
-
-            this.data = data;
+        if(size == indexValue){
+            insertAtEnd(data);
+            return;
         }
+
+        if(indexValue == 0){
+            insertAtStarting(data);
+            return;
+        }
+
+
+        Node newNode = new Node(data);
+
+        // Temp Node
+
+        Node temp = head;
+
+        while(currentIndex != indexValue-1){
+
+            temp=temp.next;
+            currentIndex++;
+
+        }
+
+        newNode.next = temp.next;
+
+        temp.next = newNode;
+
+        size++;
     }
+
+    public void deleteFirst(){
+
+        if(head == null){
+            System.out.println("Linked list is Empty");
+
+            return;
+        }
+
+        head = head.next;
+
+        size--;
+    }
+
+    public  void deleteLast(){
+
+        Node temp = head;
+
+        while(temp.next.next != null){
+            temp = temp.next;
+        }
+        temp.next=null;
+
+        tail = temp;
+
+        size --;
+    }
+
+    public void deleteByIndex(int indexNumber){
+
+        int currentIdx = 0;
+
+
+        Node temp = head;
+
+        while(currentIdx!=indexNumber-1){
+
+            temp=temp.next;
+
+        }
+        temp.next=temp.next.next;
+
+        size --;
+    }
+
 }
