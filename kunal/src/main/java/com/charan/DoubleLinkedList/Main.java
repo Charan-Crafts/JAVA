@@ -14,7 +14,29 @@ public class Main {
 
         DLL.insertAtEnd(120);
 
+        DLL.insertAtIndex(30,2);
+
+        DLL.insertAtIndex(40,3);
+
+        DLL.insertAtIndex(110,5);
+
+
+
+        DLL.deleteAtStart();
+
+        DLL.deleteAtStart();
+
+        DLL.deleteAtEnd();
+
+        DLL.deleteAtEnd();
+
+        DLL.deleteAtIndex(1);
+
+        DLL.deleteAtIndex(1);
+
         DLL.display();
+
+        DLL.size();
 
 
     }
